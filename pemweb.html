@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cari Makanan</title>
+    <link rel="stylesheet" href="branda.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <style>
+      header{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--z-fixed);
+      }
+
+      :root{
+          --header-height: 3rem;
+          /*font*/
+          --body-font: 'Roboto Condensed', sans-sarif;
+          --biggest-font-size: 2.25rem;
+          --h1-font-size: 1.5rem;
+          --h2-font-size: 1.25rem;
+          --h3-font-size: 1rem;
+          --normal-font-size: .938rem;
+          --smaller-font-size: .75rem;
+          --small-font-size: .813rem;
+          --font-medium: 500;
+          --font-semi-bold:600;
+          /*margen*/
+          --mb-1: .5rem;
+          --mb-2: 1rem;
+          --mb-3: 1.5rem;
+          --mb-4: 2rem;
+          --mb-5: 2.5rem;
+          --mt-6: 3rem;
+          /*z index*/
+          --z-tolltip: 10;
+          --z-fixed: 100;
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+      h1,h2,h3,p,ul{
+        margin:0;
+      }
+      ul{
+        padding:0;
+      }
+      a{
+        text-decoration: none;
+      }
+      .section{
+        padding: 4rem 0 2 rem;
+      }
+      body {
+            font-family: var(--body-font);
+            font-size: var(--body-font-size);
+            background-color: white;
+            margin: var(--header-height)0 0 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.6;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: pink;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: white;
+            color: pink;
+        }
+        .navbar{
+            position:fixed;
+            width: 50%;
+            top: 0;
+            z-index: 1;
+        }
+        .scrolltop{
+          position: fixed;
+          right: 1rem;
+          bottom: 1rem;
+          display: flex;
+          justify-content: center;
+          padding: 3rem;
+          background-color: var(--first-color);
+          border-radius: .4rem;
+          z-index: var(--z-tolltip);
+          transition: .4s;
+        }
+        .scrolltop:hover{
+          background-color: var(--first-color-alt);
+        }
+        .scrolltop__icon{
+          font-size: 1.8rem;
+          color: var(--body-color);
+
+        }
+        @media screen and (min-width: 768px){
+          :root{
+            --biggest-font-size: 4rem;
+          --h1-font-size: 2.25rem;
+          --h2-font-size: 1.5rem;
+          --h3-font-size: 1.25rem;
+          --normal-font-size: 1rem;
+          --smaller-font-size: .813rem;
+          --small-font-size: .875rem;
+          }
+        }
+        
+    </style>
+  </head>
+  <body>
+    <a href="#" class="scrolltop" id="scroll-top">
+      <i class="bx bx-chevron-up scrolltop__icon"></i>
+    </a>
+     <header>
+      <input  type="checkbox" id="chek" />
+      <label class="navbar" for="chek" class="fas fa-bars"></label>
+      <h1 class="logo">Kalori<span>Ku</span></h1>
+      <nav>
+        <a href="welcome.php">Beranda</a>
+        <a href="cek.html">Cek Kalori</a>
+        <a href="">Akun</a>
+        <a href="pemweb.html">Saran Menu</a>
+      </nav>
+      <div class="icon"><a href="logout.php" class="fa-solid fa-circle-xmark"></a></div>
+    </header>
+    <div class="search-container">
+      <input type="text" class="form-control" id="search-input" name="search" placeholder="Search...">
+      <button class="search-button">Search</button>
+  </div>
+
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nasi Goreng</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi (198 gram)
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">329kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">55g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">13g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Ayam Geprek</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi 
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">263kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">7.6g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">17.61g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bubur Ayam</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi (240 gram)
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">372kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">36.12g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">27.56g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Mie Ayam</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi (240 gram)
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">421kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">46.21g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">16.7g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Es Kopi Susu</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu gelas
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">30kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">7.14g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">0.31g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Es Jeruk</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu gelas
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">112kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">25.79g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">1.74g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nasi Padang</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi 
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">664kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">70g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">70g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Es Teh</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu gelas
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">90kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">23.44g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">0.02g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bakso Sapi</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Ukuran porsi: satu porsi 
+                </h6>
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="card-text">Kalori</p>
+                    <p class="card-text">444kkal</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Karbohidrat</p>
+                    <p class="card-text">0.61g</p>
+                  </div>
+                  <div class="col">
+                    <p class="card-text">Protein</p>
+                    <p class="card-text">42.39g</p>
+                  </div>
+                </div>
+                <a href="#" class="card-link"
+                  >Kembali --></a
+                >
+              </div>
+            </div>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/scrollreveal">
+
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function filterList() {
+        const searchInput = document.getElementById("search-input");
+        const filter = searchInput.value.toLowerCase();
+        const listItems = document.querySelectorAll(".list-group-item");
+
+        listItems.forEach((item) => {
+          let text = item.textContent;
+          if (text.toLowerCase().includes(filter.toLowerCase())) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+      document
+        .getElementById("search-input")
+        .addEventListener("input", filterList);
+    </script>
+  </body>
+</html>

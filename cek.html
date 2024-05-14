@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Bismillah Kalkulator</title>
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 3s ease;
+}
+:root {
+  --print: #e84393;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+      header {
+  position: fixed;
+  padding: 2rem 9%;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header #chek {
+  display: none;
+}
+header .fa-bars {
+  font-size: 3rem;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  border: solid 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+}
+
+.logo {
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #333;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: var(--print);
+}
+
+nav a {
+  font-size: 2.4rem;
+  padding: 0 1.6rem;
+  color: #333;
+}
+
+nav a:hover {
+  color: var(--print);
+  letter-spacing: 0.6px;
+}
+.icon a {
+  font-size: 3rem;
+  margin: 1.2rem;
+  color: #333;
+}
+.icon a:hover {
+  color: var(--print);
+}
+header #chek {
+  display: none;
+}
+header .fa-bars {
+  font-size: 3rem;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  border: solid 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 998px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  section {
+    background-position: left;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+header .fa-bars {
+    display: block;
+  }
+  header #chek:checked ~ nav {
+    height: 400px;
+  }
+
+      </style>
+    
+  </head>
+  <body>
+    <header>
+      <input  type="checkbox" id="chek" />
+      <label class="navbar" for="chek" class="fas fa-bars"></label>
+      <h1 class="logo">Kalori<span>Ku</span></h1>
+      <nav>
+        <a href="welcome.php">Beranda</a>
+        <a href="">Cek Kalori</a>
+        <a href="">Akun</a>
+        <a href="pemweb.html">Saran Menu</a>
+      </nav>
+      <div class="icon"><a href="logout.php" class="fa-solid fa-circle-xmark"></a></div>
+    </header>
+    <section>
+      <div
+        class="elementor-container elementor-column-gap-default"
+        style="
+          width: 1000px;
+          height: 500px;
+          border-radius: solid 2px;
+          background-color: #ffe5ec;
+          justify-content: center;
+          margin: auto;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+            sans-serif;
+          color: #827f3a;
+          padding: 15px;
+        "
+      >
+            <div >
+              <div class="elementor-widget-container">
+                <p>
+                  <style>
+                    input {
+                      margin: 3px 0;
+                    }
+
+                    .button.color1 {
+                      text-transform: uppercase;
+                    }
+                  </style>
+                </p>
+
+                <div class="calculator-holder">
+                  <div>
+                    <h1 align="center">
+                      <b>Hitung kebutuhan kalori harian anda</b>
+                    </h1>
+                    <form action="POST" class="form">
+                      <div class="form-row">
+                        <div class="form-col">
+                          <input
+                            type="text"
+                            name="height"
+                            placeholder="Tinggi (cm)"
+                          />
+                        </div>
+                        <div class="bmic-form-col">
+                          <input
+                            type="text"
+                            name="weight"
+                            placeholder="Berat (Kg)"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="col">
+                          <input type="text" name="age" placeholder="Umur" />
+                        </div>
+                        <div class="ic-form-col">
+                          Jenis kelamin<br/>
+                          <label>
+                            <input type="radio" name="sex" value="male" />Pria
+                          </label>
+                          <br />
+                          <label>
+                            <input
+                              type="radio"
+                              name="sex"
+                              option=""
+                              value="female"
+                            />Wanita
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="actic_full">
+                          <select name="activity_level">
+                            <option value="">Pilih aktivitas harian</option>
+                            <option value="little">
+                              Minimal, Suka Rebahan
+                            </option>
+                            <option value="light">
+                              Aktivitas ringan, Olahraga 1-3 kali/minggu
+                            </option>
+                            <option value="moderate">
+                              Aktivitas menengah, olahraga 3-5 kali/minggu
+                            </option>
+                            <option value="heavy">
+                              Aktivitas berat, olahraga 6-7 kali/minggu
+                            </option>
+                            <option value="very_heavy">
+                              Pekerja fisik, olahraga 2 kali/hari
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div
+                        style="
+                          margin: 0 auto;
+                          position: relative;
+                          align-content: center;
+                          width: fit-content;
+                          color: #827f3a;
+                        "
+                      >
+                        <div class="button">
+                          <input class="button" type="submit" value="Hitung" />
+                        </div>
+                      </div>
+                    </form>
+
+<!--notif ketika sudah dihitung-->
+                    <div
+                      class="mkd-bmic-notifications-col"
+                      style="
+                        border-radius: 8px;
+                        background: #fff;
+                        padding: 4px;
+                        text-align: center;
+                        box-shadow: 2px 2px 4px #cc9c91 inset;
+                      "
+                    >
+                      <div class="mkd-bmic-notifications">
+                        <span class="mkd-bmic-icon-holder">
+                          <span></span>
+                        </span>
+                        <span class="mkd-bmic-notification-text"></span>
+                        <a href="#" class="mkd-bmic-notification-close"></a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div>
+
+
+              <div class="elementor-widget-container">
+                <h2>Jenis-jenis aktivitas harian</h2>
+                <ol>
+                  <li>Sedentary (banyak duduk), contohnya: kerja kantoran.</li>
+                  <li>
+                    Aktivitas ringan, contohnya: jogging 30 menit atau lebih,
+                    lebih banyak berdiri.
+                  </li>
+                  <li>
+                    Aktivitas menengah, contohnya: Menyapu lantai, membersihkan
+                    kaca, dance, aerobik. Pekerja dengan aktivitas moderate
+                    contohnya adalah kurir, pelayan, cleaning service.
+                  </li>
+                  <li>
+                    Aktivitas Ekstrim, contohnya: Jogging 2 jam/hari. Pekerja
+                    dengan aktivitas ekstrim adalah pekerja bangunan dan atlet.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section>
+      <div
+        class="container"
+        style="
+          width: 1000px;
+          height: 700px;
+          border-radius: solid 2px;
+          background-color: #ffe5ec;
+          justify-content: center;
+          margin: auto;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+            sans-serif;
+          color: #827f3a;
+          padding: 15px;
+        "
+      >
+        <div class="container 1">
+          <div class="widget" style="text-align: center">
+            <h2>Metode Penghitungan Kebutuhan Kalori Harian</h2>
+          </div>
+        </div>
+
+        <div class="widget-container">
+          Kebutuhan kalori anda diukur dengan menggunakan rumus
+          <strong>Mifflin St. Jeor</strong> :<br />
+          <br />
+          <dl>
+            <dt><b>BMR (Basal Metabolic Rate)</b></dt>
+            <dt style="text-align: left">
+              BMR adalah jumlah kalori yang dibutuhkan untuk melakukan aktivitas
+              minimum seperti bernafas. Kalkulator ini menghitung BMR
+              menggunakan rumus
+              <strong>Mifflin St. Jeor</strong>
+              sebagai berikut.
+            </dt>
+          </dl>
+          <div
+            style="
+              margin: 4px auto;
+              background: #fff;
+              padding: 8px;
+              border-radius: 8px;
+              display: block;
+              box-shadow: 2px 2px 4px #cc9c91 inset;
+              max-width: 350px;
+            "
+          >
+            <strong>Pria</strong>
+            = 10 x BB + 6.25 x TB - 5 x U + 5<br />
+            <strong>Wanita</strong>
+            = 10 x BB + 6.25 x TB - 5 x U - 161
+          </div>
+          <ol>
+            <li>BB adalah berat badan anda dalam Kilogram (Kg).</li>
+            <li>TB adalah tinggi badan anda dalam centimeter (cm).</li>
+            <li>U adalah umur dalam satuan Tahun.</li>
+          </ol>
+          <dl>
+            <dt><b>Kebutuhan Kalori Harian (TDEE)</b></dt>
+            <dt>
+              TDEE (Total Daily Energy Expenditure) adalah total kalori yang
+              anda butuhkan dalam melakukan aktivitas sehari-hari.
+              <strong>Mifflin St. Jeor</strong>
+              mengelompokkan TDEE ke dalam beberapa kategori sebagai berikut.
+            </dt>
+          </dl>
+          <ul>
+            <li>Minimal bergerak atau kerja kantoran, pengali TDEE = 1.2</li>
+            <li>
+              Aktivitas ringan, olahraga 1-2 kali/minggu, pengali TDEE = 1.375
+            </li>
+            <li>
+              Aktivitas sedang, olahraga 3-5 kali/minggu, pengali TDEE = 1.55
+            </li>
+            <li>
+              Aktivitas berat, olahraga 6-7 kali/minggu, pengali TDEE = 1.725
+            </li>
+            <li>
+              Aktivitas ekstrim, olahraga 2 kali sehari atau lebih, pengali TDEE
+              = 1.9
+            </li>
+          </ul>
+        </div>
+
+        <div class="widget-container 2">
+          <div
+            style="
+              margin: 4px auto;
+              background: #fff;
+              padding: 8px;
+              border-radius: 8px;
+              display: inline-block;
+              box-shadow: 2px 2px 4px #cc9c91 inset;
+            "
+          >
+            <i class="fa fa-exclamation-circle"></i>
+            <b>Disclaimer</b>
+            <p style="text-align: left">
+              Perlu diketahui bahwa Kebutuhan Kalori setiap individu juga dapat
+              dipengaruhi oleh faktor lain seperti kondisi tubuh. Selain itu,
+              kondisi medis tertentu dapat mempengaruhi kebutuhan kalori harian.
+              Sebelum mengubah pola diet, pastikan anda konsultasi dengan dokter
+              terlebih dahulu untuk menemukan metode yang paling sesuai untuk
+              anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

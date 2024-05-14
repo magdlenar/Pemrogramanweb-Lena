@@ -1,0 +1,203 @@
+     
+      h1,h2,h3,p,ul{
+        margin:0;
+      }
+      ul{
+        padding:0;
+      }
+      a{
+        text-decoration: none;
+      }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 3s ease;
+}
+:root {
+  --header-height: 3rem;
+          /*font*/
+          --body-font: 'Roboto Condensed', sans-sarif;
+          --biggest-font-size: 2.25rem;
+          --h1-font-size: 1.5rem;
+          --h2-font-size: 1.25rem;
+          --h3-font-size: 1rem;
+          --normal-font-size: .938rem;
+          --smaller-font-size: .75rem;
+          --small-font-size: .813rem;
+          --font-medium: 500;
+          --font-semi-bold:600;
+          /*margen*/
+          --mb-1: .5rem;
+          --mb-2: 1rem;
+          --mb-3: 1.5rem;
+          --mb-4: 2rem;
+          --mb-5: 2.5rem;
+          --mt-6: 3rem;
+          /*z index*/
+          --z-tolltip: 10;
+          --z-fixed: 100;
+  --print: #e84393;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+header {
+  position: fixed;
+  padding: 2rem 9%;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #333;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: var(--print);
+}
+
+nav a {
+  font-size: 2.4rem;
+  padding: 0 1.6rem;
+  color: #333;
+}
+
+nav a:hover {
+  color: var(--print);
+  letter-spacing: 0.6px;
+}
+.icon a {
+  font-size: 3rem;
+  margin: 1.2rem;
+  color: #333;
+}
+.icon a:hover {
+  color: var(--print);
+}
+header #chek {
+  display: none;
+}
+header .fa-bars {
+  font-size: 3rem;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  border: solid 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(download.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 9%;
+}
+.content {
+  max-width: 45rem;
+}
+.content h2 {
+  font-size: 6.6rem;
+  color: #333;
+}
+.content span {
+  font-size: 2rem;
+  color: var(--print);
+  line-height: 1.5;
+  padding: 1.3rem 0;
+}
+.content p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 1.3rem 0;
+}
+.content .btn {
+  display: inline-block;
+  padding: 0.9rem 3.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bolder;
+  background-color: #333;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background-color: var(--print);
+}
+@media (max-width: 998px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  section {
+    background-position: left;
+  }
+}
+@media screen and (min-width: 768px){
+  :root{
+    --biggest-font-size: 4rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --smaller-font-size: .813rem;
+  --small-font-size: .875rem;
+  }
+  .nav{
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: 0;
+    background-color: #eee;
+    border-top: solid 2px rgba(0, 0, 0, 0.3);
+    height: 0px;
+    overflow: hidden;
+  }
+  nav a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    display: block;
+    border: solid 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  header .fa-bars {
+    display: block;
+  }
+  header #chek:checked ~ nav {
+    height: 400px;
+  }
+}
